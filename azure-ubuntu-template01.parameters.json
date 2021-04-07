@@ -1,0 +1,69 @@
+
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "canadacentral"
+        },
+        "networkInterfaceName": {
+            "value": "ubudepem01476"
+        },
+        "networkSecurityGroupName": {
+            "value": "ubuDepEM0-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "subnetEM0"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/475XXXXXXXXX/resourceGroups/RGEM0/providers/Microsoft.Network/virtualNetworks/VnetEM0"
+        },
+        "publicIpAddressName": {
+            "value": "ubuDepEM01-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "ubuDepEM01"
+        },
+        "virtualMachineComputerName": {
+            "value": "ubuDepEM01"
+        },
+        "virtualMachineRG": {
+            "value": "RGEM0"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B1s"
+        },
+        "adminUsername": {
+            "value": "azureuser"
+        },
+        "adminPublicKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAb5pQ6swDl/G72CHxaAHsxKPdmJ+neIwu0uD/8n8a9xTcLnlQU1gI+fA3GdRldn0rYjdcNfqJTWiVC7uOrR/e1E/gaY/oQiQb1FfndOOApVs1T8eNIuvSFruqkadSQSKqUwx/UMK7NHzoBJbWpEk4VQB0sCPFkt2yUJir3XAMD1AVDEMAZCd8Q5nOwZEuuFFHNFp0vu+vLpRCE+mvux1iHzVdDllSDorex6jJrwd/IOziTOYb/C0yf9abFMYJvr3NUmMvuVYKlxHk7EzckYNe2SXC2nvdWMZnEZO3S+tF0+KFcpLtWWvPUznRVkrj2DF6144sFlVCA8="
+        }
+    }
+}
